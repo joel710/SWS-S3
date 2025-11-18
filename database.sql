@@ -44,9 +44,16 @@ CREATE TABLE `objects` (
   `path` VARCHAR(1024) NOT NULL,
   `mime_type` VARCHAR(255) NOT NULL,
   `size` INT NOT NULL,
+  `file_hash` VARCHAR(64) DEFAULT NULL,
+  `metadata` JSON DEFAULT NULL,
+  `optimized_at` DATETIME DEFAULT NULL,
+  `thumbnails_available` BOOLEAN DEFAULT FALSE,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `bucket_id` (`bucket_id`),
+  KEY `file_hash` (`file_hash`),
+  KEY `mime_type` (`mime_type`),
+  KEY `optimized_at` (`optimized_at`),
   CONSTRAINT `objects_ibfk_1` FOREIGN KEY (`bucket_id`) REFERENCES `buckets` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
