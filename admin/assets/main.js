@@ -2,6 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     loadProjects();
+    loadSystemStats();
+    loadOptimizationJobs();
+
+    // Initialize auto-refresh for real-time data
+    setInterval(() => {
+        loadSystemStats();
+        loadOptimizationJobs();
+    }, 30000); // Refresh every 30 seconds
 
     // Example of how to add a new project
     const addProjectForm = document.getElementById('add-project-form');
