@@ -1,0 +1,72 @@
+/* admin/assets/style.css */
+
+/* Using design tokens from the frontend design document */
+:root {
+  --color-sun: #FFC300;
+  --color-metal: #7D848A;
+  --color-black: #0A0A0A;
+  --color-white: #FFFFFF;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-sm: 0 1px 3px rgba(10,10,10,0.06);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7fa;
+}
+
+.admin-layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 64px 1fr;
+    height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--color-white);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-sm);
+}
+.logo { font-weight: bold; }
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--color-white);
+    padding: 20px;
+}
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar nav li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--color-black);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+}
+.sidebar nav li a:hover {
+    background-color: var(--color-sun);
+    color: var(--color-white);
+}
+
+/* Main Content */
+.main-content {
+    grid-area: main;
+    padding: 40px;
+    overflow-y: auto;
+}
