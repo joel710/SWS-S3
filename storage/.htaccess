@@ -1,0 +1,14 @@
+# Disable directory browsing
+Options -Indexes
+
+# Deny all direct access to files
+<FilesMatch ".*">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# Specifically prevent execution of scripts
+<FilesMatch "\.(php|php2|php3|php4|php5|php6|php7|phps|phtml|cgi|pl|py|sh|exe)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
