@@ -5,6 +5,12 @@
 header("Content-Type: application/json; charset=UTF-8");
 
 // Include required files
+require_once __DIR__ . '/config/Environment.php';
+
+// Initialize environment configuration
+Environment::initialize();
+
+// Include configuration and routing
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/config/routes.php';
 
