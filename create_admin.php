@@ -1,12 +1,23 @@
 <?php
 // create_admin.php
+// Include environment configuration
+require_once __DIR__ . '/api/config/Environment.php';
+
+// Initialize environment configuration
+Environment::initialize();
+
 include_once __DIR__ . '/api/config/database.php';
 
 $database = new Database();
 $db = $database->connect();
 
-$username = 'admin';
-$password = 'admin';
+// Check if connection is successful
+if ($db === null) {
+    die('Failed to connect to database. Please check your .env configuration.');
+}
+
+$username = 'strive';
+$password = 'strive2025';
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 $query = 'INSERT INTO users (username, password) VALUES (:username, :password)';

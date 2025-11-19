@@ -166,7 +166,7 @@ class Environment
         // Cache configuration
         define('CACHE_DRIVER', getenv('CACHE_DRIVER') ?: 'file');
         define('CACHE_HOST', getenv('CACHE_HOST') ?: 'localhost');
-        define('CACHE_PORT', (int)(getenv('CACHE_PORT') ?: 6379);
+        define('CACHE_PORT', (int)(getenv('CACHE_PORT') ?: 6379));
         define('CACHE_PREFIX', getenv('CACHE_PREFIX') ?: 'object_storage');
 
         // Monitoring configuration
@@ -184,7 +184,7 @@ class Environment
         // Email configuration
         define('ENABLE_EMAIL_NOTIFICATIONS', getenv('ENABLE_EMAIL_NOTIFICATIONS') !== 'false');
         define('SMTP_HOST', getenv('SMTP_HOST') ?: '');
-        define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 587);
+        define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 587));
         define('SMTP_USERNAME', getenv('SMTP_USERNAME') ?: '');
         define('SMTP_PASSWORD', getenv('SMTP_PASSWORD') ?: '');
         define('SMTP_ENCRYPTION', getenv('SMTP_ENCRYPTION') ?: 'tls');
